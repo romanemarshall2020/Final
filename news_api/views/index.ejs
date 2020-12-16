@@ -9,7 +9,16 @@
 </head>
 
 <body>
-   <h1>Welcome</h1>
+    <div class="container">
+         
+        <h1>Welcome</h1>
+        <% for (let i = 0; i < response.articles.length; i++) { %>
+             <h1><%= response.articles[i].title %></h1> 
+             <img src="<%= response.articles[i].urlToImage %>" alt="">
+            <h3>Author: <%= response.articles[i].author %></h3>
+            
+        <% } %>
+
 </body>
 
 </html>
