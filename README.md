@@ -2,8 +2,14 @@
 //////
 Sources
 /////////
+Where i found my Api
 https://newsapi.org/docs/endpoints/everything
 https://github.com/bzarras/newsapi
+
+CSS styling
+https://materializecss.com/getting-started.html
+https://materializecss.com/cards.html
+
 
 /////
 Summer
