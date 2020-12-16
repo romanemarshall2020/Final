@@ -2,8 +2,13 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI('ab3971f7a2af4190b5dced2f8d0e4719');
 const app = express ();
 const db = mongoose.connection;
+
+
+
 
 // port
 const PORT = process.env.PORT || 3000;
@@ -35,12 +40,16 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// app.use(NewsAPI)
+
 // method-overrride
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
-app.get('/', (req, res) => {
-    res.send('hello')
+app.get('/news', (req, res) => {
+    res.send('index.ejs')
 })
+
+
 
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
