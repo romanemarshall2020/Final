@@ -20,6 +20,8 @@ news.get('/json', async (req, res) => {
 
 
 // Routes
+
+// Main page
 news.get('/', async (req, res) => {
     console.log('test')
     newsapi.v2.everything({
@@ -34,6 +36,19 @@ news.get('/', async (req, res) => {
       });
 })
 
+// headline page
+news.get('/headline', async (req, res) => {
+    newsapi.v2.topHeadlines({
+    // sources: 'bbc-news,the-verge',
+    q: 'bitcoin',
+    category: 'business',
+    language: 'en',
+    country: 'us'
+  }).then(response => {
+    console.log(response);
+    res.render('headline.ejs', {response})
+  });
 
+})
 
 module.exports = news;
