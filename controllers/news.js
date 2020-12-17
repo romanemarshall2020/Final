@@ -25,7 +25,7 @@ news.get('/json', async (req, res) => {
 news.get('/', async (req, res) => {
     console.log('test')
     newsapi.v2.everything({
-        q: 'bitcoin',
+        // q: 'bitcoin',
         sources: 'bbc-news,the-verge',
         domains: 'bbc.co.uk, techcrunch.com',
         language: 'en',
@@ -40,7 +40,7 @@ news.get('/', async (req, res) => {
 news.get('/headline', async (req, res) => {
     newsapi.v2.topHeadlines({
     // sources: 'bbc-news,the-verge',
-    q: 'bitcoin',
+    // q: 'bitcoin',
     category: 'business',
     language: 'en',
     country: 'us'
