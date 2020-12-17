@@ -17,9 +17,10 @@
 
     <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo center"></a>
+          <a href="#" class="brand-logo center">ROME</a>
           <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="headline.ejs">headlines</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/headline">Headlines</a></li>
             <li><a href="sources.ejs">Sources</a></li>
           </ul>
         </div>
@@ -30,7 +31,7 @@
 
     <div class="container">
          
-        <h1>Welcome</h1>
+        <h1>Headlines</h1>
         <% for (let i = 0; i < response.articles.length; i++) { %>
             <div class="row">
                 <div class="col s12 m7">
