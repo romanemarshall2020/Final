@@ -1,32 +1,28 @@
-
-
-$(document).ready(function(){
-
-  $("#searchbtn").on("click", function(e){
+$(document).ready(function () {
+  $('#searchbtn').on('click', function (e) {
     e.preventDefault();
 
-    let query = $("#searchbox").val();
-    let url = "https://newsapi.org/v2/everything?q="+query+"&apiKey=ab3971f7a2af4190b5dced2f8d0e4719";
+    let query = $('#searchbox').val();
+    let url = 'https://newsapi.org/v2/everything?q=' + query + '&apiKey=ab3971f7a2af4190b5dced2f8d0e4719';
 
-    if(query !== ""){
-
+    if (query !== '') {
       $.ajax({
         url: url,
-        method: "GET",
-        dataType: "json",
+        method: 'GET',
+        dataType: 'json',
 
-        beforeSend: function(){
-          $("#results").show();
+        beforeSend: function () {
+          $('#results').show();
         },
 
-        complete: function(){
+        complete: function () {
           // $("#results").hide()
         },
-        success: function(results){
-         let output = "";
-         let latestNews = results.articles;
-         for(let i in latestNews) {
-           output += `
+        success: function (results) {
+          let output = '';
+          let latestNews = results.articles;
+          for (let i in latestNews) {
+            output += `
 
 
 
@@ -55,91 +51,22 @@ $(document).ready(function(){
 
 
            `;
-           console.log(results)
-         }
-         if(output !== ""){
-          $("#results").html(output)
-
-         }else{
-           let notFound = "this is not available"
-           $("#results").html()
-         }
+            console.log(results);
+          }
+          if (output !== '') {
+            $('#results').html(output);
+          } else {
+            let notFound = 'this is not available';
+            $('#results').html();
+          }
         },
 
-        error: function(){
-          console.log("error");
+        error: function () {
+          console.log('error');
         }
-
-
       });
-
-    }else{
-      console.log('please enter something'); 
+    } else {
+      console.log('please enter something');
     }
-    // res.render("search.ejs", {response})
-  })
-})
-
-// })
-
-
-
-
-
-
-
-
-
-// // To query /v2/top-headlines
-// // All options passed to topHeadlines are optional, but you need to include at least one of them
-// newsapi.v2.topHeadlines({
-//   sources: 'bbc-news,the-verge ',
-//   q: 'bitcoin',
-//   category: 'business',
-//   language: 'en',
-//   country: 'us'
-// }).then(response => {
-//   console.log(response);
-//   /*
-//     {
-//       status: "ok",
-//       articles: [...]
-//     }
-//   */
-// });
-// // To query /v2/everything
-// // You must include at least one q, source, or domain
-// newsapi.v2.everything({
-//   q: 'bitcoin',
-//   sources: 'bbc-news,the-verge',
-//   domains: 'bbc.co.uk, techcrunch.com',
-//   from: '2017-12-01',
-//   to: '2017-12-12',
-//   language: 'en',
-//   sortBy: 'relevancy',
-//   page: 2
-// }).then(response => {
-//   console.log(response);
-//   /*
-//     {
-//       status: "ok",
-//       articles: [...]
-//     }
-//   */
-// });
-// // To query sources
-// // All options are optional
-// newsapi.v2.sources({
-//   category: 'technology',
-//   language: 'en',
-//   country: 'us'
-// }).then(response => {
-//   console.log(response);
-//   /*
-//     {
-//       status: "ok",
-//       sources: [...]
-//     }
-//   */
-// });
-
+  });
+});

@@ -17,6 +17,7 @@ https://www.youtube.com/watch?v=hfKzh0IhtpY&t=865s
 /////
 Summer
 ////////
+
 The api i chose to use has given me a few options to work with. i can do searches, have headlines and also have links that directly links you to the original article. 
 
 i plan to incorporate a search bar on each of my page so you can search for a specific category of news. when entered this will redirect you to a separate page that will render all results based on your search.
