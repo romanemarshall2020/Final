@@ -1,11 +1,4 @@
 
-// const express = require('express')
-// const news = express.Router()
-
-
-
-
-// news.get('/', async (req, res) => {
 
 $(document).ready(function(){
 
@@ -61,19 +54,11 @@ $(document).ready(function(){
 </div>
 
 
-
-
-
-            // <h4>${latestNews[i].title}</h4>
-            // <img src="${latestNews[i].urlToImage}">
-            // <p>${latestNews[i].description}</p> 
-            // <p>Published on: ${latestNews[i].publishedAt}</p> 
-            // <a>${latestNews[i].url}</a>
-
            `;
            console.log(results)
          }
          if(output !== ""){
+          $("#results").html(output)
 
          }else{
            let notFound = "this is not available"
