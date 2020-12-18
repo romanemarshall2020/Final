@@ -20,7 +20,7 @@ $(document).ready(function(){
         },
 
         complete: function(){
-          $("#results").hide()
+          // $("#results").hide()
         },
         success: function(results){
          let output = "";

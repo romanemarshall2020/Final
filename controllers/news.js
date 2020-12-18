@@ -48,7 +48,7 @@ news.get('/headline', async (req, res) => {
 
 
 news.get('/search', async (req, res) => {
-res.render("search.ejs", {results})
+res.render("search.ejs")
 })
 
 module.exports = news;
