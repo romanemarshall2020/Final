@@ -2,6 +2,8 @@
 // const newsapi = new NewsAPI('ab3971f7a2af4190b5dced2f8d0e4719');
 // const bodyParser = require('body-parser');
 
+const { response } = require("express");
+
 // import $ from 'jquery';
 // window.jQuery = window.$ = $;
 // $(selector).hide();
@@ -31,20 +33,33 @@ $(document).ready(function(){
         complete: function(){
           $("#results").hide()
         },
-        success: function(data){
-          console.log(data);
+        success: function(response){
+         let output = "";
+         let latestNews = response.articles;
+         for(let i in latestNews) {
+           output += `
+            <h4>${latestNews[i].title}</h4>
+            <img src="${latestNews[i].urlToImage}">
+            <p>${latestNews[i].description}</p> 
+            <p>Published on: ${latestNews[i].publishedAt}</p> 
+            <a>${latestNews[i].url}</a>
+
+           `;
+           console.log(response)
+         }
         },
 
         error: function(){
           console.log("error");
         }
-        
+
 
       });
 
     }else{
       console.log('please enter something')
     }
+    res.render("search.ejs", {response})
   })
 })
 
