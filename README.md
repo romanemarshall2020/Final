@@ -17,16 +17,34 @@ https://www.youtube.com/watch?v=hfKzh0IhtpY&t=865s
 /////
 Summer
 ////////
+The point of my app is to pull news from NewsApi.org. i can get information like title, description, images, and contents of each article. 
 
 The api i chose to use has given me a few options to work with. i can do searches, have headlines and also have links that directly links you to the original article. 
 
-i plan to incorporate a search bar on each of my page so you can search for a specific category of news. when entered this will redirect you to a separate page that will render all results based on your search.
+I incorporated a search bar on each of my page so you can search for a specific category of news. when entered this will redirect you to a separate page that will render all results based on your search.
+/////
+//Deployment
+////
+https://api-news-app.herokuapp.com/
+
+
+/////
+Technologies used
+/////
+
+node.js
+express.js
+nodemon
+mongoose
+Materialize
+ejs
+path
+Jquery
 
 
 
-Home Page
-Home page will have all aggrigated news present on the the index page.
-i would like to have my home page broken up into about 3 separate pages. this way i can have a certain amount of articles to displaying at a time. mainly to help with organization.
+
+
 
 
 
