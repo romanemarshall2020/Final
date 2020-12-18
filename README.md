@@ -10,6 +10,9 @@ CSS styling
 https://materializecss.com/getting-started.html
 https://materializecss.com/cards.html
 
+Search bar functionality 
+https://www.youtube.com/watch?v=hfKzh0IhtpY&t=865s
+
 
 /////
 Summer
