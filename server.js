@@ -3,9 +3,13 @@ const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const NewsAPI = require('newsapi');
+const bodyParser = require("body-parser")
+const path = require('path')
 const newsapi = new NewsAPI('ab3971f7a2af4190b5dced2f8d0e4719');
 const app = express ();
 const db = mongoose.connection;
+
+
 
 
 
@@ -32,6 +36,10 @@ app.use(newsController)
 
 
 // Middleware
+app.use(bodyParser.json());
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+// app.use(bodyParser.urlrencoded({extended : false}));
+
 
 // Public folder for CSS styling
 app.use(express.static('public'));
