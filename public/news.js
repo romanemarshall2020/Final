@@ -1,15 +1,11 @@
-// const NewsAPI = require('newsapi');
-// const newsapi = new NewsAPI('ab3971f7a2af4190b5dced2f8d0e4719');
-// const bodyParser = require('body-parser');
 
-const { response } = require("express");
-
-// import $ from 'jquery';
-// window.jQuery = window.$ = $;
-// $(selector).hide();
+// const express = require('express')
+// const news = express.Router()
 
 
 
+
+// news.get('/', async (req, res) => {
 
 $(document).ready(function(){
 
@@ -33,9 +29,9 @@ $(document).ready(function(){
         complete: function(){
           $("#results").hide()
         },
-        success: function(response){
+        success: function(results){
          let output = "";
-         let latestNews = response.articles;
+         let latestNews = results.articles;
          for(let i in latestNews) {
            output += `
 
@@ -46,16 +42,16 @@ $(document).ready(function(){
             <div class="col s12 m7">
               <div class="card">
                 <div class="card-image">
-                  <img src="${response.articles[i].urlToImage}">
-                  <span class="card-title">${response.articles[i].title} <br>
-                    Author: ${response.articles[i].author} 
+                  <img src="${results.articles[i].urlToImage}">
+                  <span class="card-title">${results.articles[i].title} <br>
+                    Author: ${results.articles[i].author} 
                 </span>
                 </div>
                 <div class="card-content">
-                    <p> ${response.articles[i].description}</p>
+                    <p> ${results.articles[i].description}</p>
                 </div>
                 <div class="card-action">
-                  <a href="${response.articles[i].url}">${response.articles[i].url}</a>
+                  <a href="${results.articles[i].url}">${results.articles[i].url}</a>
                 </div>
               </div>
             </div>
@@ -75,7 +71,13 @@ $(document).ready(function(){
             // <a>${latestNews[i].url}</a>
 
            `;
-           console.log(response)
+           console.log(results)
+         }
+         if(output !== ""){
+
+         }else{
+           let notFound = "this is not available"
+           $("#results").html()
          }
         },
 
@@ -87,11 +89,13 @@ $(document).ready(function(){
       });
 
     }else{
-      console.log('please enter something')
+      console.log('please enter something'); 
     }
-    res.render("search.ejs", {response})
+    // res.render("search.ejs", {response})
   })
 })
+
+// })
 
 
 
