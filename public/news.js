@@ -38,11 +38,41 @@ $(document).ready(function(){
          let latestNews = response.articles;
          for(let i in latestNews) {
            output += `
-            <h4>${latestNews[i].title}</h4>
-            <img src="${latestNews[i].urlToImage}">
-            <p>${latestNews[i].description}</p> 
-            <p>Published on: ${latestNews[i].publishedAt}</p> 
-            <a>${latestNews[i].url}</a>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="${response.articles[i].urlToImage}">
+                  <span class="card-title">${response.articles[i].title} <br>
+                    Author: ${response.articles[i].author} 
+                </span>
+                </div>
+                <div class="card-content">
+                    <p> ${response.articles[i].description}</p>
+                </div>
+                <div class="card-action">
+                  <a href="${response.articles[i].url}">${response.articles[i].url}</a>
+                </div>
+              </div>
+            </div>
+          </div> 
+   
+
+</div>
+
+
+
+
+
+            // <h4>${latestNews[i].title}</h4>
+            // <img src="${latestNews[i].urlToImage}">
+            // <p>${latestNews[i].description}</p> 
+            // <p>Published on: ${latestNews[i].publishedAt}</p> 
+            // <a>${latestNews[i].url}</a>
 
            `;
            console.log(response)
@@ -63,34 +93,6 @@ $(document).ready(function(){
   })
 })
 
-// $( document ).ready(function() {
-  
-//   // GET REQUEST
-//   $("#searchbtn").on("click", function(event){
-//     event.preventDefault();
-//     ajaxGet();
-//   });
-  
-//   // DO GET
-//   function ajaxGet(){
-//     $.ajax({
-//       type : "GET",
-//       url : window.location + "https://newsapi.org/v2/everything?q="+query+"&apiKey=ab3971f7a2af4190b5dced2f8d0e4719",
-//       success: function(result){
-//         $('#results ul').empty();
-//         var searchRes = "";
-//         $.each(result, function(i, customer){
-//           $('#results .list-group').append(response.articles[i].title + " " + response.articles[i].url + "<br>")
-//         });
-//         console.log("Success: ", result);
-//       },
-//       error : function(e) {
-//         $("#results").html("<strong>Error</strong>");
-//         console.log("ERROR: ", e);
-//       }
-//     });  
-//   }
-// })
 
 
 
