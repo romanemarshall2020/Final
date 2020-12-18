@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="../main.css">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../materialize.min.css"  media="screen,projection"/>
+    <title>News App</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">ROME</a>
+          <ul id="nav-mobile" class="left .show-on-medium-and-up">
+            <li><a href="/">Home</a></li>
+            <li><a href="/headline">Headlines</a></li>
+            <li><a href="/search">search</a></li>
+          </ul>
+          <ul class="right">
+            <form action="">
+              <li class=""><input type="text" id="search" placeholder="Search.."></li>
+            <a href="search.ejs"><li class=""><input type="submit" id="searchbuttin" class="btn" placeholder="Search.."></li></a>
+            </form>
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+    <div class="container">
+         
+        <h1>Welcome</h1>
+        <% for (let i = 0; i < response.articles.length; i++) { %>
+            <div class="row">
+                <div class="col s12 m7">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="<%= response.articles[i].urlToImage %>">
+                      <span class="card-title"><%= response.articles[i].title %> <br>
+                        Author: <%=response.articles[i].author  %> 
+                    </span>
+                    </div>
+                    <div class="card-content">
+                        <p ><%= response.articles[i].description %></p>
+                    </div>
+                    <div class="card-action">
+                      <a href="<%=response.articles[i].url%>"><%=response.articles[i].url %></a>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+        <% } %>
+
+    </div>
+        <script type="text/javascript" src="../materialize.min.js"></script>
+</body>
+
+</html>
