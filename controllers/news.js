@@ -16,9 +16,6 @@ news.get('/json', async (req, res) => {
   })
 
 
-
-
-
 // Routes
 
 // Main page
