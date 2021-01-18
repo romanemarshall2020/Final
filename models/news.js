@@ -10,7 +10,7 @@ const newsSchema = new mongoose.Schema({
         description: {type: String, required: true},
         url: {type: String, required: true},
         urlToImage: {type: String, required: true},
-        // publishedAt: {type: String, required: true}, 
+        publishedAt: {type: String, required: true}, 
         // content: {type: String, required: true}
         
 },

@@ -1,0 +1,15 @@
+form {
+    size: 257.770px 63.636px;
+}
+
+#link {
+    overflow-wrap: break-word;
+}
+
+.author {
+    font-size: 15px;
+    /* padding: 5px; */
+}
+.published {
+    font-size: 12px;
+}
