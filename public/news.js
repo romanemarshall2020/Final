@@ -32,15 +32,18 @@ $(document).ready(function () {
               <div class="card">
                 <div class="card-image">
                   <img src="${results.articles[i].urlToImage}">
-                  <span class="card-title">${results.articles[i].title} <br>
-                    Author: ${results.articles[i].author} 
-                </span>
+                  
                 </div>
                 <div class="card-content">
-                    <p> ${results.articles[i].description}</p>
+                <span class="card-title">${results.articles[i].title} <br>
+                  <div>
+                    <h4 class="author"> Author: ${results.articles[i].author} </h4>
+                    </div>
+                    <div> <h4 class="published"> Published: ${results.articles[i].publishedAt} </h4> </div>
+                </span>
                 </div>
-                <div class="card-action">
-                  <a href="${results.articles[i].url}">${results.articles[i].url}</a>
+                <div class="card-action" id="link">
+                  <a href="${results.articles[i].url}" target="_blank">Read Article</a>
                 </div>
               </div>
             </div>
