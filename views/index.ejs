@@ -7,7 +7,7 @@
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link rel="stylesheet" href="../main.css">
+      <link rel="stylesheet" href="../../main.css">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="../materialize.min.css"  media="screen,projection"/>
     <title>ROME</title>
@@ -25,8 +25,8 @@
           </ul>
           <ul class="right">
             <form action="">
-              <li class=""><input type="text" id="search" placeholder="Search.."></li>
-            <a href="search.ejs"><li class=""><input type="submit" id="searchbuttin" class="btn" placeholder="Search.."></li></a>
+              <li class=""><input type="text" id="searchbox"  placeholder="Search.."></li>
+            <a href="search.ejs"><li class="search-btn"><input type="submit" id="searchbtn"  class="btn" placeholder="Search.."></li></a>
             </form>
           </ul>
         </div>
@@ -39,24 +39,28 @@
          
         <h1>Welcome</h1>
         <% for (let i = 0; i < response.articles.length; i++) { %>
-            <div class="row">
-                <div class="col s12 m7">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src="<%= response.articles[i].urlToImage %>">
-                      <span class="card-title"><%= response.articles[i].title %> <br>
-                        Author: <%=response.articles[i].author  %> 
-                    </span>
-                    </div>
-                    <div class="card-content">
-                        <p ><%= response.articles[i].description %></p>
-                    </div>
-                    <div class="card-action">
-                      <a href="<%=response.articles[i].url%>"><%=response.articles[i].url %></a>
-                    </div>
-                  </div>
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="<%= response.articles[i].urlToImage %>">
                 </div>
-              </div> 
+                <div class="card-content">
+                  <span class="card-title"><%= response.articles[i].title %> <br>
+                    <div>
+                      <h4 class="author"> Author: <%=response.articles[i].author  %> </h4>
+                    </div>
+                    <div> <h4 class="published"> Published: <%= response.articles[i].publishedAt%> </h4> </div>
+                </span>
+                
+                    <!-- <p><%= response.articles[i].description %></p> -->
+                </div>
+                <div class="card-action" id="link">
+                  <a href="<%=response.articles[i].url%>">Read Article</a>
+                </div>
+              </div>
+            </div>
+          </div> 
         <% } %>
 
     </div>
