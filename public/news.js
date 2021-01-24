@@ -13,6 +13,7 @@ $(document).ready(function () {
 
         beforeSend: function () {
           $('#results').show();
+          $('.container').hide();
         },
 
         complete: function () {
@@ -23,16 +24,12 @@ $(document).ready(function () {
           let latestNews = results.articles;
           for (let i in latestNews) {
             output += `
-
-
-
     <div class="container">
         <div class="row">
             <div class="col s12 m7">
               <div class="card">
                 <div class="card-image">
-                  <img src="${results.articles[i].urlToImage}">
-                  
+                  <img src="${results.articles[i].urlToImage}">             
                 </div>
                 <div class="card-content">
                 <span class="card-title">${results.articles[i].title} <br>
@@ -48,11 +45,7 @@ $(document).ready(function () {
               </div>
             </div>
           </div> 
-   
-
 </div>
-
-
            `;
             console.log(results);
           }
@@ -71,5 +64,8 @@ $(document).ready(function () {
     } else {
       console.log('please enter something');
     }
+
+
+  
   });
 });
